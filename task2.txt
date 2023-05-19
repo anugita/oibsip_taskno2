@@ -1,0 +1,73 @@
+import java.util.*;
+import java.util.Random;
+
+
+public class Guessingno {
+    public static void main(String args[]){
+       
+        Scanner sc=new Scanner(System.in);
+        Random random=new Random();
+        int number=random.nextInt(100)+1;
+        
+        int trial=5;
+        int guess;int i;
+        int attempt=5;
+       
+        System.out.println("___________Lets play a game__________");
+        System.out.println();
+        System.out.println("...........Guessing a Number game..........");
+        System.out.println();
+        System.out.println("________please Guess a no in between 1 to 100 _______");
+        System.out.println("You have only 5 trails......");
+        
+        for( i=0;i<trial;i++){
+
+            System.out.println("Guess the no: ");
+            guess=sc.nextInt();
+        
+        if(number == guess){
+
+            System.out.println("Congratulations!!!!  You have guessed a number");
+            System.out.println();
+            System.out.println("It will took you " + i + " no to guess the no");
+            break;
+
+        }
+        
+        else if(number > guess && i!=trial-1 ){
+
+            System.out.println("Number is higher than you guessed number.....");
+            System.out.println();
+            System.out.println("Guess again you are on " + (i+1) + " no of trail" );
+            attempt--;
+            System.out.println("you have now " + attempt + " left");
+            System.out.println();
+        
+        }
+       
+        else if(number < guess && i!=trial-1 ){
+            
+            System.out.println("Number is lower than you guessed number......");
+            System.out.println();
+            System.out.println("Guess again you are on " + (i+1) + " no of trail");
+            attempt--;
+            System.out.println("You have now " + attempt + " left");
+            System.out.println();
+        }
+    }
+   
+    if(i==trial){
+
+        System.out.println("Your trial is over. Sorryyyy....");
+        System.out.println();
+        System.out.println("The number was actually " + number);
+        System.out.println();
+        System.out.println("Better luck for next time.....");
+        System.out.println();
+        System.out.println("You can play this game again");
+        System.out.println();
+
+    }
+}
+
+}
